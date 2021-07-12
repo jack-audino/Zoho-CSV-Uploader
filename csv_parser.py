@@ -59,7 +59,11 @@ class CSVParser():
                     lowerCaseTitle = title.lower()
                     lowerCaseTitleArray = lowerCaseTitle.split(' ')
 
-                    if lowerCaseTitle in KEYWORDS:
+                    # issue where 'title' or 'position' would not be recognized, meaning it would not be uploaded to the lead page
+                    if ('position') in lowerCaseTitle or ('title') in lowerCaseTitle:
+                            foundTitlesList.append('Designation') # this is 'Title' when looking at individual lead pages in Zoho, but for the API, it needs to be changed to 'Designation' (this is unfortunately not easy to find in the documentation)
+                    
+                    elif lowerCaseTitle in KEYWORDS:
                         foundTitlesList.append(title.replace(' ', '_')) # can't use lowerCaseTitle since it will add improperly-formatted data which will stop the upload from occurring
 
                     else:
@@ -81,10 +85,6 @@ class CSVParser():
                                 
                                 elif ('mobile') in lowerCaseTitleArray[i] or ('cell') in lowerCaseTitleArray[i]: 
                                     foundTitlesList.append('Mobile')
-                                    break
-
-                                elif ('position') in lowerCaseTitleArray[i] or ('title') in lowerCaseTitleArray[i]:
-                                    foundTitlesList.append('Designation') # this is 'Title' when looking at individual lead pages in Zoho, but for the API, it needs to be changed to 'Designation' (this is unfortunately not easy to find in the documentation)
                                     break                               
 
                 break # have to add this break here otherwise it will continue to go through every row in the csv, only the title row is needed
