@@ -36,4 +36,5 @@ A tool used to parse CSV files containing client data and upload it to Zoho usin
 		* To confirm that your leads page has been updated, check your leads page in your Zoho CRM, and you should see them uploaded (these clients were made using ```/CSV File Examples/csv_file_1.csv```)
 			![Screenshot15](https://user-images.githubusercontent.com/87036127/124669733-dffcd100-de80-11eb-9f5b-441e1f2a6a98.png)
 		* You can also check to ensure that each client was uploaded with the proper information from the csv file
-			![Screenshot16](https://user-images.githubusercontent.com/87036127/124669832-0cb0e880-de81-11eb-96a7-304e948e9cf2.png)
+			![Screenshot16](https://user-images.githubusercontent.com/87036127/125352130-e41c6900-e32e-11eb-96b6-2a197c7bd8dc.png)
+
